@@ -74,7 +74,7 @@ export default function Hero() {
           className="space-y-6"
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-            <span className="block text-foreground">Hi, I'm</span>
+            <span className="block text-foreground">Hi, I&apos;m</span>
             <span className="block code-text mt-2">Arafat Haque Biswas</span>
           </h1>
 
@@ -86,7 +86,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-xl sm:text-2xl md:text-3xl font-medium text-muted"
             >
-              <span className="text-foreground">I'm a </span>
+              <span className="text-foreground">I&apos;m a </span>
               <span className="code-text typing-animation">{display}</span>
             </motion.p>
           </div>

@@ -264,19 +264,108 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
+          className="mt-20"
         >
-          <div className="tech-card p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Interested in working together?</h3>
-            <p className="text-muted mb-6">
-              I'm always excited to collaborate on new projects and bring ideas to life.
-            </p>
-            <a
-              href="#contact"
-              className="modern-btn px-8 py-3 inline-block"
-            >
-              Let's Connect
-            </a>
+          <div className="relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-3xl" />
+            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-transparent rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-500/5 to-transparent rounded-full blur-3xl" />
+            
+            {/* Main Content */}
+            <div className="relative tech-card p-12 lg:p-16 max-w-4xl mx-auto text-center">
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8"
+              >
+                <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-pulse" />
+                <span className="text-sm font-medium">Let&apos;s Work Together</span>
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              >
+                <span className="block text-foreground">Ready to build</span>
+                <span className="block code-text mt-2">something amazing?</span>
+              </motion.h3>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="text-lg sm:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
+              >
+                I&apos;m passionate about creating innovative solutions and always excited to collaborate on projects that make a difference.
+              </motion.p>
+
+              {/* Action Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              >
+                <a
+                  href="#contact"
+                  className="modern-btn px-8 py-4 text-lg font-semibold rounded-xl group"
+                >
+                  <span className="flex items-center gap-2">
+                    <span>Start a Project</span>
+                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </a>
+                
+                <a
+                  href="mailto:arafathaquebiswas@gmail.com"
+                  className="tech-card px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform group"
+                >
+                  <span className="flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Email Me</span>
+                  </span>
+                </a>
+              </motion.div>
+
+              {/* Stats or Additional Info */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="mt-12 pt-8 border-t border-border"
+              >
+                <div className="flex flex-wrap justify-center gap-8 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">4+</div>
+                    <div className="text-sm text-muted">Projects Completed</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">24h</div>
+                    <div className="text-sm text-muted">Response Time</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">100%</div>
+                    <div className="text-sm text-muted">Client Satisfaction</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

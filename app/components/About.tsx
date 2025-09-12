@@ -83,7 +83,7 @@ export default function About() {
             {/* Introduction */}
             <div className="space-y-6">
               <h3 className="text-2xl sm:text-3xl font-bold">
-                Hi, I'm <span className="code-text">Arafat Haque Biswas</span>
+                Hi, I&apos;m <span className="code-text">Arafat Haque Biswas</span>
               </h3>
               <p className="text-lg text-muted leading-relaxed">
                 A passionate Computer Science student at BRAC University, Bangladesh. I love creating 
@@ -104,7 +104,7 @@ export default function About() {
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Computer Science & Engineering</h4>
                   <p className="text-muted">BRAC University, Bangladesh</p>
-                  <p className="text-sm text-muted mt-1">Currently pursuing my Bachelor's degree</p>
+                  <p className="text-sm text-muted mt-1">Currently pursuing my Bachelor&apos;s degree</p>
                 </div>
               </div>
             </div>

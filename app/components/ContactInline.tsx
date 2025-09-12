@@ -51,6 +51,15 @@ export default function ContactInline() {
             >
               GitHub
             </a>
+            <a
+              href="/My_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Arafat_Haque_Biswas_CV.pdf"
+              className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
+            >
+              CV
+            </a>
           </div>
 
           {/* Grab a coffee section */}

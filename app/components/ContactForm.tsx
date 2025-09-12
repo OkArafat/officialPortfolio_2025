@@ -175,7 +175,7 @@ export default function ContactForm({ toEmail }: ContactFormProps) {
                 />
               </svg>
             )}
-            {status === "sending" ? "Opening email..." : "Send Message"}
+            {status === "sending" ? "Sending..." : "Send Message"}
           </span>
         </button>
         <button
