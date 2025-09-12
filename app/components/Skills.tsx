@@ -1,583 +1,290 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-type Skill = { name: string; description: string; useCase: string };
-
-const skills: Skill[] = [
+const skills = [
   {
     name: "Python",
-    description:
-      "Versatile programming language for web development and automation.",
+    description: "Versatile programming language for web development and automation.",
     useCase: "Web applications, data analysis, and scripting.",
+    level: "Intermediate",
+    color: "from-green-500 to-emerald-500"
   },
   {
     name: "JavaScript",
-    description:
-      "Dynamic programming language for interactive web applications.",
+    description: "Dynamic programming language for interactive web applications.",
     useCase: "Frontend development, DOM manipulation, and web APIs.",
+    level: "Learning",
+    color: "from-yellow-500 to-orange-500"
   },
   {
     name: "React",
     description: "Component-based UI library for building interactive interfaces.",
     useCase: "SPA dashboards, dynamic forms, and reusable UI systems.",
+    level: "Intermediate",
+    color: "from-blue-500 to-cyan-500"
   },
   {
     name: "HTML/CSS",
     description: "Fundamental web technologies for structure and styling.",
     useCase: "Website layouts, responsive design, and user interfaces.",
+    level: "Intermediate",
+    color: "from-pink-500 to-rose-500"
   },
   {
     name: "PHP",
     description: "Server-side scripting language for web development.",
     useCase: "Dynamic websites, content management, and web applications.",
+    level: "Learning",
+    color: "from-purple-500 to-violet-500"
   },
   {
     name: "Next.js",
-    description:
-      "React framework with SSR, SSG, routing, and image optimization.",
+    description: "React framework with SSR, SSG, routing, and image optimization.",
     useCase: "SEO-friendly sites, hybrid apps, and fast content platforms.",
+    level: "Learning",
+    color: "from-gray-500 to-slate-500"
   },
   {
     name: "TypeScript",
     description: "Typed superset of JavaScript that improves reliability.",
     useCase: "Large codebases, SDKs, and refactor-safe enterprise apps.",
+    level: "Learning",
+    color: "from-blue-600 to-blue-800"
   },
   {
     name: "Node.js",
     description: "Event-driven runtime for building scalable backends.",
     useCase: "APIs, realtime services, CLI tools, and integrations.",
+    level: "Learning",
+    color: "from-green-600 to-green-800"
   },
   {
     name: "MySQL",
     description: "Relational database known for reliability and speed.",
     useCase: "Transactional systems, reporting, and BI pipelines.",
+    level: "Learning",
+    color: "from-orange-500 to-amber-500"
   },
   {
     name: "Git",
     description: "Version control system for tracking code changes.",
     useCase: "Collaborative development, code management, and deployment.",
+    level: "Intermediate",
+    color: "from-red-500 to-pink-500"
   },
   {
     name: "Web Development",
     description: "Full-stack development of web applications and sites.",
     useCase: "Portfolio sites, e-commerce, and interactive web platforms.",
-  },
+    level: "Intermediate",
+    color: "from-indigo-500 to-purple-500"
+  }
 ];
 
-function SkillIcon({ name }: { name: string }) {
-  const base = "h-6 w-6";
-  switch (name) {
-    case "React":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className={base}
-          fill="none"
-          stroke="currentColor"
-        >
-          <circle cx="12" cy="12" r="2" />
-          <ellipse cx="12" cy="12" rx="10" ry="4.5" strokeWidth="1.2" />
-          <ellipse
-            cx="12"
-            cy="12"
-            rx="10"
-            ry="4.5"
-            transform="rotate(60 12 12)"
-            strokeWidth="1.2"
-          />
-          <ellipse
-            cx="12"
-            cy="12"
-            rx="10"
-            ry="4.5"
-            transform="rotate(120 12 12)"
-            strokeWidth="1.2"
-          />
-        </svg>
-      );
-    case "Next.js":
-      return (
-        <svg viewBox="0 0 24 24" className={base} fill="currentColor">
-          <path d="M12 2a10 10 0 100 20 10 10 0 000-20Zm4.5 14.5L9 7v6h2v4h2v-2.5l3.5 3Z" />
-        </svg>
-      );
-    case "TypeScript":
-      return (
-        <svg viewBox="0 0 24 24" className={base} fill="currentColor">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <path d="M8 8h8v2h-3v8h-2V10H8V8Z" fill="var(--background)" />
-        </svg>
-      );
-    case "Node.js":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className={base}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.2"
-        >
-          <path d="M12 2l9 5v10l-9 5-9-5V7l9-5Z" />
-          <path d="M8.5 10v4l3.5 2 3.5-2v-4L12 8l-3.5 2Z" />
-        </svg>
-      );
-    case "TailwindCSS":
-      return (
-        <svg viewBox="0 0 24 24" className={base} fill="currentColor">
-          <path d="M12 6c-3 0-4 2-5 3 1-1 2-1 3-1 2 0 3 1 4 3 1 2 3 3 5 3 3 0 4-2 5-3-1 1-2 1-3 1-2 0-3-1-4-3-1-2-3-3-5-3Z" />
-        </svg>
-      );
-    case "Framer Motion":
-      return (
-        <svg viewBox="0 0 24 24" className={base} fill="currentColor">
-          <path d="M4 3h10l6 6-6 6H4V3Zm0 12h10v6H4v-6Z" />
-        </svg>
-      );
-    case "MongoDB":
-      return (
-        <svg viewBox="0 0 24 24" className={base} fill="currentColor">
-          <path d="M12 2s5 4 5 10-5 10-5 10-5-4-5-10S12 2 12 2Z" />
-        </svg>
-      );
-    case "PHP":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className={base}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <rect x="3" y="6" width="18" height="12" rx="2" />
-          <path d="M8 10h2a1.5 1.5 0 010 3H8v-3Zm6 0h2a1.5 1.5 0 010 3h-2v-3Zm-1 0v5" />
-        </svg>
-      );
-    case "MySQL":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className={base}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.2"
-        >
-          <path d="M4 16c2-4 6-8 10-8 3 0 4 1 6 3" />
-          <circle cx="18" cy="14" r="2" fill="currentColor" />
-        </svg>
-      );
-    case "Java":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className={base}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.2"
-        >
-          <path d="M12 3s-2 2-2 4 2 3 2 5-2 3-2 5 2 4 2 4" />
-          <ellipse cx="12" cy="20" rx="6" ry="2" />
-        </svg>
-      );
-    case "Spring Boot":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className={base}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.2"
-        >
-          <polygon points="12,2 22,9 18,22 6,22 2,9" />
-          <circle cx="12" cy="13" r="3" />
-        </svg>
-      );
-    default:
-      return (
-        <svg viewBox="0 0 24 24" className={base} fill="currentColor">
-          <circle cx="12" cy="12" r="10" />
-        </svg>
-      );
+const categories = [
+  {
+    title: "Frontend Development",
+    skills: ["React", "JavaScript", "HTML/CSS", "Next.js", "TypeScript"],
+    color: "from-blue-500 to-cyan-500",
+    icon: "🎨"
+  },
+  {
+    title: "Backend Development", 
+    skills: ["Python", "PHP", "Node.js", "Express.js"],
+    color: "from-green-500 to-emerald-500",
+    icon: "⚙️"
+  },
+  {
+    title: "Database & Tools",
+    skills: ["MySQL", "Git", "Web Development", "API Integration"],
+    color: "from-purple-500 to-violet-500",
+    icon: "🗄️"
+  },
+  {
+    title: "Development Tools",
+    skills: ["VS Code", "GitHub", "Netlify", "Responsive Design"],
+    color: "from-orange-500 to-red-500",
+    icon: "🛠️"
   }
-}
+];
 
 export default function Skills() {
-  const rowRef = useRef<HTMLDivElement | null>(null);
-  const [selected, setSelected] = useState<string>(skills[0]?.name || "");
-
-  const scrollByAmount = (dir: "left" | "right") => {
-    const el = rowRef.current;
-    if (!el) return;
-    const amount = Math.max(240, Math.floor(el.clientWidth * 0.6));
-    el.scrollBy({
-      left: dir === "left" ? -amount : amount,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section
-      id="skills"
-      className="max-w-6xl mx-auto mt-20 md:mt-28 scroll-mt-24"
-    >
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-4">
-        Skills
-      </h2>
+    <section id="skills" className="relative py-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-500/10 to-transparent rounded-full blur-3xl" />
 
-      {/* Interactive Skills Carousel */}
-      <div className="relative mb-12">
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent" />
-
-        <div
-          ref={rowRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-3 no-scrollbar py-1"
-          style={{ scrollSnapType: "x mandatory" }}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          {skills.map((s, i) => (
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            My <span className="code-text">Skills</span>
+          </h2>
+          <p className="text-lg text-muted max-w-2xl mx-auto mb-8">
+            Technologies and tools I use to bring ideas to life
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+        </motion.div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+          {skills.map((skill, index) => (
             <motion.div
-              key={s.name}
-              initial={{ opacity: 0, y: 8 }}
+              key={skill.name}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.35, delay: i * 0.03 }}
-              onClick={() => setSelected(s.name)}
-              role="button"
-              aria-pressed={selected === s.name}
-              tabIndex={0}
-              className={`min-w-[45%] sm:min-w-[33.333%] md:min-w-[25%] lg:min-w-[16.666%] snap-start rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 cursor-pointer transition-colors border ${
-                selected === s.name
-                  ? "border-foreground/30 bg-foreground/5"
-                  : "border-foreground/10 bg-background/60 hover:bg-foreground/5"
-              }`}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="tech-card group p-6 hover:scale-105 transition-transform"
             >
-              <div className="shrink-0 text-foreground/80">
-                <SkillIcon name={s.name} />
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${skill.color} rounded-xl flex items-center justify-center`}>
+                    <span className="text-white font-bold text-lg">
+                      {skill.name.charAt(0)}
+                    </span>
+                  </div>
+                  <span className="text-xs font-medium px-2 py-1 bg-green-100 text-green-700 rounded-full dark:bg-green-900/30 dark:text-green-300">
+                    {skill.level}
+                  </span>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-blue-500 transition-colors">
+                    {skill.name}
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {skill.description}
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-border">
+                  <p className="text-xs text-muted">
+                    <span className="font-medium">Use case:</span> {skill.useCase}
+                  </p>
+                </div>
               </div>
-              <div className="text-xs sm:text-sm font-medium">{s.name}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Selected Skill Details */}
-        <div className="mt-5">
-          <AnimatePresence mode="wait">
-            {skills
-              .filter((s) => s.name === selected)
-              .map((s) => (
-                <motion.div
-                  key={s.name}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
-                  className="rounded-2xl border border-foreground/10 p-3 sm:p-4 md:p-5 bg-background/60"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="text-foreground/80">
-                      <SkillIcon name={s.name} />
-                    </div>
-                    <div>
-                      <div className="text-xs sm:text-sm uppercase tracking-wider text-foreground/60">
-                        Selected Skill
-                      </div>
-                      <h3 className="text-base sm:text-lg font-medium mt-1">
-                        {s.name}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="mt-3 grid gap-2 text-xs sm:text-sm text-foreground/80">
-                    <p>{s.description}</p>
-                    <p className="text-foreground/70">
-                      <span className="font-medium">Use case:</span> {s.useCase}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-          </AnimatePresence>
-        </div>
-
-        <div className="hidden md:flex items-center gap-2 absolute -top-10 right-0">
-          <button
-            aria-label="Scroll skills left"
-            onClick={() => scrollByAmount("left")}
-            className="w-8 h-8 inline-flex items-center justify-center rounded-md border border-foreground/15 text-foreground/80 hover:bg-foreground/5"
-          >
-            ‹
-          </button>
-          <button
-            aria-label="Scroll skills right"
-            onClick={() => scrollByAmount("right")}
-            className="w-8 h-8 inline-flex items-center justify-center rounded-md border border-foreground/15 text-foreground/80 hover:bg-foreground/5"
-          >
-            ›
-          </button>
-        </div>
-        <div className="mt-2 md:hidden text-xs text-foreground/60 text-center">
-          Swipe to see more →
-        </div>
-      </div>
-
-      {/* Comprehensive Skills Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {/* Frontend Development */}
+        {/* Skills Categories */}
         <motion.div
-          initial={{ opacity: 0, x: -16 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-4"
-        >
-          <div className="border-l-2 border-blue-500/30 pl-4 space-y-2">
-            <h3 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              Frontend Development
-            </h3>
-            <p className="text-foreground/70 text-xs sm:text-sm">
-              Modern web interfaces with React ecosystem
-            </p>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {[
-                "React",
-                "JavaScript",
-                "HTML/CSS",
-                "Next.js",
-                "TypeScript",
-              ].map((skill, index) => (
-                <span
-                  key={index}
-                  className="inline-block px-2 sm:px-3 py-1 bg-blue-100 rounded-full text-xs text-blue-700 hover:bg-blue-500 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer dark:bg-blue-900/30 dark:text-blue-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Backend Development */}
-        <motion.div
-          initial={{ opacity: 0, x: 16 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="space-y-4"
-        >
-          <div className="border-l-2 border-green-500/30 pl-4 space-y-2">
-            <h3 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              Backend Development
-            </h3>
-            <p className="text-foreground/70 text-xs sm:text-sm">
-              Scalable server-side applications and APIs
-            </p>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {["Python", "PHP", "Node.js", "Express.js", "MySQL"].map(
-                (skill, index) => (
-                  <span
-                    key={index}
-                    className="inline-block px-2 sm:px-3 py-1 bg-green-100 rounded-full text-xs text-green-700 hover:bg-green-500 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer dark:bg-green-900/30 dark:text-green-300"
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Database & Storage */}
-        <motion.div
-          initial={{ opacity: 0, x: -16 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-4"
+          className="mb-16"
         >
-          <div className="border-l-2 border-purple-500/30 pl-4 space-y-2">
-            <h3 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-              <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-              Database & Storage
-            </h3>
-            <p className="text-foreground/70 text-xs sm:text-sm">
-              Data management and persistence solutions
-            </p>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {["MySQL", "Git", "Web Development", "Responsive Design", "API Integration"].map(
-                (skill, index) => (
-                  <span
-                    key={index}
-                    className="inline-block px-2 sm:px-3 py-1 bg-purple-100 rounded-full text-xs text-purple-700 hover:bg-purple-500 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer dark:bg-purple-900/30 dark:text-purple-300"
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
-            </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+            <span className="code-text">Skill</span> Categories
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="tech-card p-8"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl`}>
+                    {category.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold">{category.title}</h4>
+                    <p className="text-sm text-muted">{category.skills.length} technologies</p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="tech-card px-3 py-1 text-sm font-medium hover:scale-105 transition-transform cursor-pointer"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
-        {/* Development Tools */}
+        {/* Experience Timeline */}
         <motion.div
-          initial={{ opacity: 0, x: 16 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="space-y-4"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="tech-card p-8"
         >
-          <div className="border-l-2 border-orange-500/30 pl-4 space-y-2">
-            <h3 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-              <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-              Development Tools
-            </h3>
-            <p className="text-foreground/70 text-xs sm:text-sm">
-              Modern development workflow and deployment
-            </p>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {["VS Code", "GitHub", "Netlify", "Responsive Design", "Version Control"].map(
-                (skill, index) => (
-                  <span
-                    key={index}
-                    className="inline-block px-2 sm:px-3 py-1 bg-orange-100 rounded-full text-xs text-orange-700 hover:bg-orange-500 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer dark:bg-orange-900/30 dark:text-orange-300"
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
+          <h3 className="text-2xl font-bold mb-8 text-center">
+            <span className="code-text">Learning</span> Journey
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                  Current Focus
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">JavaScript</span>
+                    <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Learning</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">React</span>
+                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Intermediate</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">Python</span>
+                    <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Intermediate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <span className="w-3 h-3 bg-purple-500 rounded-full"></span>
+                  Notable Projects
+                </h4>
+                <div className="space-y-3">
+                  <div className="text-sm">
+                    <div className="font-medium">Google Clone</div>
+                    <div className="text-muted">HTML, CSS, JavaScript</div>
+                  </div>
+                  <div className="text-sm">
+                    <div className="font-medium">Spotify Clone</div>
+                    <div className="text-muted">Music streaming app</div>
+                  </div>
+                  <div className="text-sm">
+                    <div className="font-medium">Tic-Tac-Toe Game</div>
+                    <div className="text-muted">Interactive JavaScript game</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
       </div>
-
-      {/* Professional Experience & Certifications */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="mt-12 space-y-6"
-      >
-        <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-foreground/90">
-          Professional Experience & Certifications
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {/* Experience Level */}
-          <div className="border-l-2 border-cyan-500/30 pl-4 space-y-3">
-            <h4 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-              <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
-              Experience Level
-            </h4>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-sm text-foreground/70">
-                  JavaScript
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Learning
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-sm text-foreground/70">
-                  Python
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Intermediate
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-sm text-foreground/70">
-                  React
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Intermediate
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-sm text-foreground/70">
-                  HTML/CSS
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Intermediate
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Recent Certifications */}
-          <div className="border-l-2 border-indigo-500/30 pl-4 space-y-3">
-            <h4 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-              <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-              Recent Certifications
-            </h4>
-            <div className="space-y-2">
-              <div className="text-xs sm:text-sm">
-                <div className="font-medium text-foreground/80">
-                  AWS Certified Developer
-                </div>
-                <div className="text-foreground/60">
-                  Amazon Web Services • 2024
-                </div>
-              </div>
-              <div className="text-xs sm:text-sm">
-                <div className="font-medium text-foreground/80">
-                  React Developer Certification
-                </div>
-                <div className="text-foreground/60">Meta • 2023</div>
-              </div>
-              <div className="text-xs sm:text-sm">
-                <div className="font-medium text-foreground/80">
-                  JavaScript Algorithms
-                </div>
-                <div className="text-foreground/60">freeCodeCamp • 2023</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Notable Projects */}
-        <div className="border-l-2 border-pink-500/30 pl-4 space-y-3">
-          <h4 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
-            <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
-            Notable Project Experience
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            <div className="text-xs sm:text-sm">
-              <div className="font-medium text-foreground/80">
-                Google Clone
-              </div>
-              <div className="text-foreground/60">
-                Built with HTML, CSS, and JavaScript
-              </div>
-            </div>
-            <div className="text-xs sm:text-sm">
-              <div className="font-medium text-foreground/80">
-                Spotify Clone
-              </div>
-              <div className="text-foreground/60">
-                Music streaming application clone
-              </div>
-            </div>
-            <div className="text-xs sm:text-sm">
-              <div className="font-medium text-foreground/80">
-                Tic-Tac-Toe Game
-              </div>
-              <div className="text-foreground/60">
-                Interactive game built with JavaScript
-              </div>
-            </div>
-            <div className="text-xs sm:text-sm">
-              <div className="font-medium text-foreground/80">
-                Snake Game
-              </div>
-              <div className="text-foreground/60">
-                Classic game implementation
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

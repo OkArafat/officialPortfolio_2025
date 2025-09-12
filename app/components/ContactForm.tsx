@@ -32,28 +32,15 @@ export default function ContactForm({ toEmail }: ContactFormProps) {
     setStatus("sending");
 
     try {
-      // Use Web3Forms for direct email sending with modern HTML template
-      const currentDate = new Date();
+      // Use Web3Forms for direct email sending
       const formData = {
         name: name,
         email: email,
         message: message,
-        date: currentDate.toLocaleDateString("en-US", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        }),
-        time: currentDate.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
-        website: "Portfolio Website",
-        _subject: `📧 New Portfolio Contact from ${name}`,
+        _subject: `Portfolio Contact from ${name}`,
         _replyto: email,
-        _captcha: "false", // Disable captcha for better UX
-        _template: "table", // Use table template for better formatting
-        _next: "https://your-portfolio-domain.com/thank-you", // Optional: redirect after success
+        _captcha: "false",
+        _template: "table",
       };
 
       console.log("Sending email via Web3Forms:", formData);
@@ -81,7 +68,7 @@ export default function ContactForm({ toEmail }: ContactFormProps) {
         setMessage("");
 
         // Show success message
-        alert("✅ Message sent successfully! I&apos;ll get back to you soon.");
+        alert("✅ Message sent successfully! I'll get back to you soon.");
 
         // Reset status
         setStatus("idle");
@@ -91,10 +78,10 @@ export default function ContactForm({ toEmail }: ContactFormProps) {
     } catch (error) {
       console.error("Error sending email:", error);
       setStatus("idle");
-      alert(
-        "❌ Failed to send message. Please try again or contact me directly at " +
-          toEmail
-      );
+      
+      // Fallback to mailto if Web3Forms fails
+      const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(`Portfolio Contact from ${name}`)}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`)}`;
+      window.location.href = mailtoUrl;
     }
   };
 
