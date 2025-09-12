@@ -18,7 +18,7 @@ export const EMAILJS_CONFIG = {
   publicKey: "OpYMsQmkcsXII--kC",
 
   // Your email address where messages will be sent
-  toEmail: "ahsanauddry.ndc@gmail.com",
+  toEmail: "arafathaquebiswas@gmail.com",
 };
 
 // Formspree Configuration (Backup method)
@@ -26,7 +26,7 @@ export const EMAILJS_CONFIG = {
 // 1. Go to https://formspree.io/
 // 2. Create a free account
 // 3. Create a new form
-// 4. Set email to: ahsanauddry.ndc@gmail.com
+// 4. Set email to: arafathaquebiswas@gmail.com
 // 5. Copy the form endpoint and replace below
 
 export const FORMSPREE_CONFIG = {
@@ -34,7 +34,7 @@ export const FORMSPREE_CONFIG = {
   formEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
 
   // Your email address where messages will be sent
-  toEmail: "ahsanauddry.ndc@gmail.com",
+  toEmail: "arafathaquebiswas@gmail.com",
 };
 
 // Email template variables that will be available in your EmailJS template:

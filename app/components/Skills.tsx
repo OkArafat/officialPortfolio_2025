@@ -7,10 +7,31 @@ type Skill = { name: string; description: string; useCase: string };
 
 const skills: Skill[] = [
   {
-    name: "React",
+    name: "Python",
     description:
-      "Component-based UI library for building interactive interfaces.",
+      "Versatile programming language for web development and automation.",
+    useCase: "Web applications, data analysis, and scripting.",
+  },
+  {
+    name: "JavaScript",
+    description:
+      "Dynamic programming language for interactive web applications.",
+    useCase: "Frontend development, DOM manipulation, and web APIs.",
+  },
+  {
+    name: "React",
+    description: "Component-based UI library for building interactive interfaces.",
     useCase: "SPA dashboards, dynamic forms, and reusable UI systems.",
+  },
+  {
+    name: "HTML/CSS",
+    description: "Fundamental web technologies for structure and styling.",
+    useCase: "Website layouts, responsive design, and user interfaces.",
+  },
+  {
+    name: "PHP",
+    description: "Server-side scripting language for web development.",
+    useCase: "Dynamic websites, content management, and web applications.",
   },
   {
     name: "Next.js",
@@ -29,39 +50,19 @@ const skills: Skill[] = [
     useCase: "APIs, realtime services, CLI tools, and integrations.",
   },
   {
-    name: "TailwindCSS",
-    description: "Utility-first CSS for rapid, consistent styling.",
-    useCase: "Design systems, responsive UIs, and fast iteration.",
-  },
-  {
-    name: "Framer Motion",
-    description: "Production-ready animations and gestures for React.",
-    useCase: "Micro-interactions, page transitions, and visual polish.",
-  },
-  {
-    name: "MongoDB",
-    description: "Document database with flexible schemas.",
-    useCase: "Content, analytics, and event data with evolving models.",
-  },
-  {
-    name: "PHP",
-    description: "General-purpose language powering many CMS platforms.",
-    useCase: "Server-rendered sites, CMS customization, and APIs.",
-  },
-  {
     name: "MySQL",
     description: "Relational database known for reliability and speed.",
     useCase: "Transactional systems, reporting, and BI pipelines.",
   },
   {
-    name: "Java",
-    description: "Robust, portable language for large-scale systems.",
-    useCase: "Back-office platforms, Android, and enterprise services.",
+    name: "Git",
+    description: "Version control system for tracking code changes.",
+    useCase: "Collaborative development, code management, and deployment.",
   },
   {
-    name: "Spring Boot",
-    description: "Convention-over-configuration framework for Java APIs.",
-    useCase: "Microservices, REST APIs, and production-ready backends.",
+    name: "Web Development",
+    description: "Full-stack development of web applications and sites.",
+    useCase: "Portfolio sites, e-commerce, and interactive web platforms.",
   },
 ];
 
@@ -339,10 +340,10 @@ export default function Skills() {
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
               {[
                 "React",
+                "JavaScript",
+                "HTML/CSS",
                 "Next.js",
                 "TypeScript",
-                "TailwindCSS",
-                "Framer Motion",
               ].map((skill, index) => (
                 <span
                   key={index}
@@ -372,7 +373,7 @@ export default function Skills() {
               Scalable server-side applications and APIs
             </p>
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {["Node.js", "Java", "Spring Boot", "PHP", "Express.js"].map(
+              {["Python", "PHP", "Node.js", "Express.js", "MySQL"].map(
                 (skill, index) => (
                   <span
                     key={index}
@@ -403,7 +404,7 @@ export default function Skills() {
               Data management and persistence solutions
             </p>
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {["MongoDB", "MySQL", "PostgreSQL", "Redis", "Firebase"].map(
+              {["MySQL", "Git", "Web Development", "Responsive Design", "API Integration"].map(
                 (skill, index) => (
                   <span
                     key={index}
@@ -434,7 +435,7 @@ export default function Skills() {
               Modern development workflow and deployment
             </p>
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
-              {["Git", "Docker", "Vercel", "AWS", "VS Code"].map(
+              {["VS Code", "GitHub", "Netlify", "Responsive Design", "Version Control"].map(
                 (skill, index) => (
                   <span
                     key={index}
@@ -471,31 +472,31 @@ export default function Skills() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs sm:text-sm text-foreground/70">
-                  React/Next.js
+                  JavaScript
                 </span>
                 <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Expert
+                  Learning
                 </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs sm:text-sm text-foreground/70">
-                  TypeScript
+                  Python
                 </span>
                 <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Advanced
+                  Intermediate
                 </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs sm:text-sm text-foreground/70">
-                  Node.js
+                  React
                 </span>
                 <span className="text-xs sm:text-sm font-medium text-foreground/80">
-                  Advanced
+                  Intermediate
                 </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs sm:text-sm text-foreground/70">
-                  Java/Spring
+                  HTML/CSS
                 </span>
                 <span className="text-xs sm:text-sm font-medium text-foreground/80">
                   Intermediate
@@ -544,34 +545,34 @@ export default function Skills() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             <div className="text-xs sm:text-sm">
               <div className="font-medium text-foreground/80">
-                E-commerce Platform
+                Google Clone
               </div>
               <div className="text-foreground/60">
-                Built with React, Node.js, and MongoDB
+                Built with HTML, CSS, and JavaScript
               </div>
             </div>
             <div className="text-xs sm:text-sm">
               <div className="font-medium text-foreground/80">
-                Real-time Chat Application
+                Spotify Clone
               </div>
               <div className="text-foreground/60">
-                Socket.io, Express.js, and PostgreSQL
+                Music streaming application clone
               </div>
             </div>
             <div className="text-xs sm:text-sm">
               <div className="font-medium text-foreground/80">
-                Portfolio Website
+                Tic-Tac-Toe Game
               </div>
               <div className="text-foreground/60">
-                Next.js, TypeScript, and Framer Motion
+                Interactive game built with JavaScript
               </div>
             </div>
             <div className="text-xs sm:text-sm">
               <div className="font-medium text-foreground/80">
-                Task Management System
+                Snake Game
               </div>
               <div className="text-foreground/60">
-                Java Spring Boot and MySQL
+                Classic game implementation
               </div>
             </div>
           </div>

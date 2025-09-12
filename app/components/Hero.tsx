@@ -63,7 +63,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.05 }}
           className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight bg-clip-text text-transparent bg-[linear-gradient(135deg,rgba(120,119,198,1),rgba(120,119,198,0.2))] font-[var(--font-display)]"
         >
-          Ahsan Habib
+          Arafat Haque Biswas
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -90,7 +90,7 @@ export default function Hero() {
             <span className="relative text-background">Contact Me</span>
           </a>
           <a
-            href="https://github.com/ahsanauddry027"
+            href="https://github.com/OkArafat"
             target="_blank"
             rel="noopener noreferrer"
             className="h-10 sm:h-11 px-4 sm:px-6 inline-flex items-center justify-center rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground/5 transition-colors"

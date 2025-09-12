@@ -3,7 +3,7 @@
 // 1. Go to https://web3forms.com/
 // 2. Create a free account
 // 3. Create a new form
-// 4. Set the email to: ahsanauddry.ndc@gmail.com
+// 4. Set the email to: arafathaquebiswas@gmail.com
 // 5. Copy the access key and replace below
 
 export const WEB3FORMS_CONFIG = {
@@ -11,7 +11,7 @@ export const WEB3FORMS_CONFIG = {
   accessKey: "ab227eb3-9055-493a-ba5d-eae7a8585b61",
 
   // Your email address where messages will be sent
-  toEmail: "ahsanauddry.ndc@gmail.com",
+  toEmail: "arafathaquebiswas@gmail.com",
 
   // Web3Forms API endpoint
   apiEndpoint: "https://api.web3forms.com/submit",

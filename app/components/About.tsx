@@ -18,7 +18,7 @@ export default function About() {
       >
         <Image
           src="/IMG_1110.PNG"
-          alt="Ahsan Habib"
+          alt="Arafat Haque Biswas"
           fill
           className="object-cover transition-transform duration-300 hover:scale-105"
           style={{
@@ -36,9 +36,9 @@ export default function About() {
         <div className="space-y-4">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-medium">About</h2>
           <p className="text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed">
-            I&apos;m Ahsan Habib, a developer who blends clean aesthetics with
-            pragmatic engineering. I enjoy building performant, accessible
-            interfaces and end-to-end products with Next.js.
+            I&apos;m Arafat Haque Biswas, a Computer Science and Engineering student at BRAC University, Bangladesh. 
+            Passionate about coding, ethical hacking, and software development. I enjoy building performant, 
+            accessible interfaces and combining technology with social good.
           </p>
         </div>
 
@@ -53,14 +53,14 @@ export default function About() {
             <div className="border-l-2 border-purple-500/30 pl-4 space-y-2">
               <h4 className="font-semibold text-foreground/90 flex items-center gap-2 text-sm sm:text-base">
                 <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-                Bachelor&apos;s Degree in Computer Science
+                Bachelor&apos;s Degree in Computer Science and Engineering
               </h4>
               <p className="text-foreground/70 text-xs sm:text-sm">
-                University of Technology • 2020 - 2024
+                BRAC University, Bangladesh • Currently Studying
               </p>
               <p className="text-foreground/70 text-xs sm:text-sm">
-                Specialized in Software Engineering, Data Structures, and Web
-                Development
+                Passionate about coding, ethical hacking, and software development. 
+                Interested in combining technology with social good.
               </p>
             </div>
 
@@ -71,12 +71,12 @@ export default function About() {
                 Academic Achievements
               </h4>
               <ul className="space-y-1 text-foreground/70 text-xs sm:text-sm">
-                <li>• Dean&apos;s List - Academic Excellence (2022, 2023)</li>
+                <li>• Completed Google Clone project</li>
                 <li>
-                  • Final Year Project: &quot;Modern Web Application
-                  Framework&quot;
+                  • Built Spotify Clone application
                 </li>
-                <li>• GPA: 3.8/4.0</li>
+                <li>• Developed various games (Tic-Tac-Toe, Snake)</li>
+                <li>• Currently learning JavaScript</li>
               </ul>
             </div>
 
@@ -88,12 +88,12 @@ export default function About() {
               </h4>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
                 {[
-                  "Data Structures & Algorithms",
-                  "Database Systems",
-                  "Software Engineering",
+                  "Python",
+                  "JavaScript",
+                  "React",
+                  "HTML/CSS",
+                  "PHP",
                   "Web Development",
-                  "Computer Networks",
-                  "Operating Systems",
                 ].map((course, index) => (
                   <span
                     key={index}
@@ -109,8 +109,8 @@ export default function About() {
           {/* CV Download Button */}
           <div className="mt-8">
             <a
-              href="https://drive.google.com/uc?export=download&id=13ytLfaOY8kWTgmcBM65mDtd2BkcYP5PK"
-              download="Ahsan_Habib_CV.pdf"
+              href="https://drive.google.com/uc?export=download&id=YOUR_CV_FILE_ID"
+              download="Arafat_Haque_Biswas_CV.pdf"
               className="group inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-black border-2 border-white rounded-lg text-white font-medium hover:bg-white hover:text-black hover:border-black transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-black/20 dark:bg-white dark:text-black dark:border-black dark:hover:bg-black dark:hover:text-white dark:hover:border-white text-sm sm:text-base"
             >
               <svg

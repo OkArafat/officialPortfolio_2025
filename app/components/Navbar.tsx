@@ -163,7 +163,7 @@ export default function Navbar({ links, className }: NavbarProps) {
             transformOrigin: "center",
           }}
         >
-          AH
+          AR
         </a>
         <nav
           ref={desktopNavRef}
@@ -291,10 +291,10 @@ export default function Navbar({ links, className }: NavbarProps) {
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 via-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-purple-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/50 overflow-hidden group-hover:w-36 group-hover:rounded-2xl transform hover:scale-105 hover:rotate-1">
                       <span className="relative transition-all duration-500">
                         <span className="inline-block transition-all duration-500 group-hover:opacity-0 group-hover:scale-75 group-hover:-rotate-12">
-                          AH
+                          AR
                         </span>
                         <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100 whitespace-nowrap text-sm font-bold tracking-wider">
-                          AHSAN
+                          ARAFAT
                         </span>
                       </span>
                     </div>
@@ -303,7 +303,7 @@ export default function Navbar({ links, className }: NavbarProps) {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-lg font-bold text-foreground tracking-wide">
-                      Ahsan Habib
+                      Arafat Haque Biswas
                     </span>
                     <span className="text-sm text-foreground/60 font-medium">
                       Portfolio
@@ -464,7 +464,7 @@ export default function Navbar({ links, className }: NavbarProps) {
                               "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                           }}
                         >
-                          ahsan.habib@example.com
+                          arafathaquebiswas@gmail.com
                         </span>
                       </div>
                     </div>
@@ -505,7 +505,7 @@ export default function Navbar({ links, className }: NavbarProps) {
                               "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                           }}
                         >
-                          +1 (555) 123-4567
+                          +8801316816333
                         </span>
                       </div>
                     </div>
@@ -546,7 +546,7 @@ export default function Navbar({ links, className }: NavbarProps) {
                               "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                           }}
                         >
-                          github.com/ahsanhabib
+                          github.com/OkArafat
                         </span>
                       </div>
                     </div>
@@ -560,7 +560,7 @@ export default function Navbar({ links, className }: NavbarProps) {
                           "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                       }}
                     >
-                      © 2025 Ahsan Habib
+                      © 2025 Arafat Haque Biswas
                     </div>
                     <div className="flex items-center justify-center gap-2 text-xs text-foreground/40">
                       <div className="w-1 h-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500" />

@@ -58,7 +58,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio • Ahsan Habib",
+  title: "Portfolio • Arafat Haque Biswas",
   description: "A modern, elegant portfolio showcasing work and capabilities.",
 };
 

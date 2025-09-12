@@ -30,13 +30,13 @@ export default function ContactInline() {
           </p>
           <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
             <a
-              href="mailto:ahsanauddry.ndc@gmail.com"
+              href="mailto:arafathaquebiswas@gmail.com"
               className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
             >
               Email
             </a>
             <a
-              href="https://linkedin.com/in/ahsanauddry027"
+              href="https://www.linkedin.com/in/arafathaquebiswas/"
               target="_blank"
               rel="noreferrer"
               className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
@@ -44,7 +44,7 @@ export default function ContactInline() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/ahsanauddry027"
+              href="https://github.com/OkArafat"
               target="_blank"
               rel="noreferrer"
               className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
@@ -52,7 +52,7 @@ export default function ContactInline() {
               GitHub
             </a>
             <a
-              href="https://discord.com/users/ahsanauddry027"
+              href="https://discord.com/users/arafat-haque-biswas"
               target="_blank"
               rel="noreferrer"
               className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
@@ -121,14 +121,14 @@ export default function ContactInline() {
                     Email
                   </span>
                   <a
-                    href="mailto:ahsanauddry.ndc@gmail.com"
+                    href="mailto:arafathaquebiswas@gmail.com"
                     className="text-sm text-foreground/60 hover:text-foreground transition-colors"
                     style={{
                       fontFamily:
                         "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                     }}
                   >
-                    ahsanauddry.ndc@gmail.com
+                    arafathaquebiswas@gmail.com
                   </a>
                 </div>
               </div>
@@ -169,7 +169,7 @@ export default function ContactInline() {
                         "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                     }}
                   >
-                    +1 (555) 123-4567
+                    +8801316816333
                   </span>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default function ContactInline() {
                     GitHub
                   </span>
                   <a
-                    href="https://github.com/ahsanauddry027"
+                    href="https://github.com/OkArafat"
                     target="_blank"
                     rel="noreferrer"
                     className="text-sm text-foreground/60 hover:text-foreground transition-colors"
@@ -213,7 +213,7 @@ export default function ContactInline() {
                         "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                     }}
                   >
-                    @ahsanauddry027
+                    @OkArafat
                   </a>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function ContactInline() {
                     Discord
                   </span>
                   <a
-                    href="https://discord.com/users/ahsanauddry027"
+                    href="https://discord.com/users/arafat-haque-biswas"
                     target="_blank"
                     rel="noreferrer"
                     className="text-sm text-foreground/60 hover:text-foreground transition-colors"
@@ -254,7 +254,7 @@ export default function ContactInline() {
                         "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
                     }}
                   >
-                    @ahsanauddry027
+                    @arafat-haque-biswas
                   </a>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function ContactInline() {
           className="rounded-2xl border border-foreground/10 p-4 sm:p-6 md:p-8 bg-background/60 backdrop-blur relative overflow-hidden"
         >
           <div className="pointer-events-none absolute -inset-24 rounded-[inherit] bg-[radial-gradient(260px_200px_at_10%_120%,rgba(120,119,198,0.18),transparent)]" />
-          <ContactForm toEmail="ahsanauddry.ndc@gmail.com" />
+          <ContactForm toEmail="arafathaquebiswas@gmail.com" />
         </motion.div>
       </div>
     </section>
