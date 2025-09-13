@@ -7,231 +7,168 @@ export default function ContactInline() {
   return (
     <section
       id="contact"
-      className="max-w-6xl mx-auto mt-20 md:mt-28 scroll-mt-24"
+      className="relative py-20 overflow-hidden"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-14 items-start">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-500/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-transparent rounded-full blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="space-y-5"
+          className="text-center mb-16"
         >
-          <p className="text-sm tracking-widest uppercase text-foreground/60">
-            Contact
-          </p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-medium font-[var(--font-display)]">
-            Let&apos;s build something great
-          </h2>
-          <p className="text-foreground/70 text-sm sm:text-base leading-relaxed">
-            I&apos;m open to freelance and full-time opportunities. Tell me
-            about your goals and timeline, and I&apos;ll reply within 24–48
-            hours.
-          </p>
-          <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
-            <a
-              href="mailto:arafathaquebiswas@gmail.com"
-              className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
-            >
-              Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/arafathaquebiswas/"
-              target="_blank"
-              rel="noreferrer"
-              className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/OkArafat"
-              target="_blank"
-              rel="noreferrer"
-              className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
-            >
-              GitHub
-            </a>
-            <a
-              href="/My_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Arafat_Haque_Biswas_CV.pdf"
-              className="h-9 sm:h-10 px-3 sm:px-4 inline-flex items-center justify-center rounded-full border border-foreground/15 text-xs sm:text-sm font-medium hover:bg-foreground/5 transition-colors"
-            >
-              CV
-            </a>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20 mb-8"
+          >
+            <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse" />
+            <span className="text-sm font-medium text-foreground/80">Get In Touch</span>
+          </motion.div>
 
-          {/* Grab a coffee section */}
-          <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-amber-50/50 to-orange-50/50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200/50 dark:border-amber-700/50">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-orange-500/20 flex items-center justify-center">
-                <span className="text-2xl">☕</span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+          >
+            <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+              Let&apos;s Connect
+            </span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-lg text-muted max-w-2xl mx-auto leading-relaxed"
+          >
+            Ready to bring your ideas to life? I&apos;m here to help you build something amazing.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            {/* Contact Info Card */}
+            <div className="p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Email Me</h3>
+                    <p className="text-sm text-muted">arafathaquebiswas@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Call Me</h3>
+                    <p className="text-sm text-muted">+8801316816333</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">Follow Me</h3>
+                    <p className="text-sm text-muted">@OkArafat</p>
+                  </div>
+                </div>
               </div>
-              <h3
-                className="text-lg font-bold text-foreground"
-                style={{
-                  fontFamily: "var(--font-elegant)",
-                  textShadow:
-                    "0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 165, 0, 0.2)",
-                  letterSpacing: "0.05em",
-                  fontWeight: "400",
-                  transform: "rotate(-1deg)",
-                  transformOrigin: "left center",
-                }}
+            </div>
+
+            {/* Quick Actions */}
+            <div className="grid grid-cols-2 gap-4">
+              <a
+                href="mailto:arafathaquebiswas@gmail.com"
+                className="p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl border border-blue-500/20 text-center hover:scale-105 transition-transform group"
               >
-                Grab a coffee ☕
-              </h3>
+                <svg className="w-6 h-6 text-blue-500 mx-auto mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <p className="text-sm font-medium text-foreground">Email</p>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/arafathaquebiswas/"
+                target="_blank"
+                rel="noreferrer"
+                className="p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl border border-purple-500/20 text-center hover:scale-105 transition-transform group"
+              >
+                <svg className="w-6 h-6 text-purple-500 mx-auto mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <p className="text-sm font-medium text-foreground">LinkedIn</p>
+              </a>
+              <a
+                href="https://github.com/OkArafat"
+                target="_blank"
+                rel="noreferrer"
+                className="p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl border border-green-500/20 text-center hover:scale-105 transition-transform group"
+              >
+                <svg className="w-6 h-6 text-green-500 mx-auto mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <p className="text-sm font-medium text-foreground">GitHub</p>
+              </a>
+              <a
+                href="/My_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Arafat_Haque_Biswas_CV.pdf"
+                className="p-4 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl border border-cyan-500/20 text-center hover:scale-105 transition-transform group"
+              >
+                <svg className="w-6 h-6 text-cyan-500 mx-auto mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <p className="text-sm font-medium text-foreground">CV</p>
+              </a>
             </div>
-            {/* Contact Details */}
-            <div className="space-y-4">
-              {/* Email */}
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-foreground/5 to-foreground/10 hover:from-foreground/10 hover:to-foreground/15 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-blue-500"
-                  >
-                    <path
-                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <polyline
-                      points="22,6 12,13 2,6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col">
-                  <span
-                    className="text-sm font-medium text-foreground/80"
-                    style={{
-                      fontFamily:
-                        "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
-                    }}
-                  >
-                    Email
-                  </span>
-                  <a
-                    href="mailto:arafathaquebiswas@gmail.com"
-                    className="text-sm text-foreground/60 hover:text-foreground transition-colors"
-                    style={{
-                      fontFamily:
-                        "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
-                    }}
-                  >
-                    arafathaquebiswas@gmail.com
-                  </a>
-                </div>
-              </div>
+          </motion.div>
 
-              {/* Phone */}
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-foreground/5 to-foreground/10 hover:from-foreground/10 hover:to-foreground/15 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-green-500"
-                  >
-                    <path
-                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col">
-                  <span
-                    className="text-sm font-medium text-foreground/80"
-                    style={{
-                      fontFamily:
-                        "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
-                    }}
-                  >
-                    Phone
-                  </span>
-                  <span
-                    className="text-sm text-foreground/60"
-                    style={{
-                      fontFamily:
-                        "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
-                    }}
-                  >
-                    +8801316816333
-                  </span>
-                </div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="p-8 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl" />
+              <div className="relative">
+                <ContactForm toEmail="arafathaquebiswas@gmail.com" />
               </div>
-
-              {/* GitHub */}
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-foreground/5 to-foreground/10 hover:from-foreground/10 hover:to-foreground/15 transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-foreground/20 to-foreground/30 flex items-center justify-center">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-foreground"
-                  >
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col">
-                  <span
-                    className="text-sm font-medium text-foreground/80"
-                    style={{
-                      fontFamily:
-                        "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
-                    }}
-                  >
-                    GitHub
-                  </span>
-                  <a
-                    href="https://github.com/OkArafat"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm text-foreground/60 hover:text-foreground transition-colors"
-                    style={{
-                      fontFamily:
-                        "var(--font-roboto), var(--font-inter), 'Roboto', 'Inter', sans-serif",
-                    }}
-                  >
-                    @OkArafat
-                  </a>
-                </div>
-              </div>
-
             </div>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-          className="rounded-2xl border border-foreground/10 p-4 sm:p-6 md:p-8 bg-background/60 backdrop-blur relative overflow-hidden"
-        >
-          <div className="pointer-events-none absolute -inset-24 rounded-[inherit] bg-[radial-gradient(260px_200px_at_10%_120%,rgba(120,119,198,0.18),transparent)]" />
-          <ContactForm toEmail="arafathaquebiswas@gmail.com" />
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

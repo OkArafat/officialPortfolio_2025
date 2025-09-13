@@ -8,16 +8,16 @@ import { useState } from "react";
     {
       id: 1,
       title: "ATMA BISWAS NGO Website",
-      desc: "Official website for ATMA BISWAS NGO with dynamic content management and responsive design.",
+      desc: "atmabiswas.org using custom JavaScript with dynamic content management and responsive design.",
       img: "https://picsum.photos/800/600?random=1",
       github: "https://github.com/OkArafat/atmabiswas-website",
       live: "https://atmabiswas.org",
-      tech: ["PHP", "HTML5", "CSS3", "JavaScript"],
+      tech: ["JavaScript", "HTML5", "CSS3", "PHP"],
     },
     {
       id: 2,
       title: "ATMA BISWAS WordPress Site",
-      desc: "WordPress-based website for ATMA BISWAS NGO with CMS functionality and modern design.",
+      desc: "atmabiswas.net WordPress-based website with CMS functionality and modern design.",
       img: "https://picsum.photos/800/600?random=2",
       github: "https://github.com/OkArafat/atmabiswas-wordpress",
       live: "https://atmabiswas.net",
@@ -53,10 +53,10 @@ import { useState } from "react";
   {
     id: 6,
     title: "BRAC University Cultural Club Website",
-    desc: "University club website with event management and student collaboration features.",
+    desc: "Official website for BRAC University Cultural Club (BUCuC) with member management, events, and club information.",
     img: "https://picsum.photos/800/600?random=6",
     github: "https://github.com/OkArafat/brac-cultural-club",
-    live: "https://brac-cultural-club.vercel.app",
+    live: "https://bucuc.org",
     tech: ["React", "Node.js", "MySQL", "JavaScript"],
   },
   {
@@ -67,6 +67,15 @@ import { useState } from "react";
     github: "https://github.com/OkArafat/university-discord-bot",
     live: "https://discord.gg/brac-cultural-club",
     tech: ["Python", "Discord.py", "MySQL", "API Integration"],
+  },
+  {
+    id: 8,
+    title: "Tic Tac Toe Game",
+    desc: "Interactive Tic Tac Toe game with modern UI and smooth animations built with JavaScript.",
+    img: "https://picsum.photos/800/600?random=8",
+    github: "https://github.com/OkArafat/tic-tac-toe-game",
+    live: "https://tic-tac-toe-arafat.vercel.app",
+    tech: ["HTML5", "CSS3", "JavaScript", "Game Logic"],
   },
 ];
 
