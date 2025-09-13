@@ -4,67 +4,46 @@ import { motion } from "framer-motion";
 
 const skills = [
   {
-    name: "Python",
-    description: "Versatile programming language for web development and automation.",
-    useCase: "Web applications, data analysis, and scripting.",
-    level: "Intermediate",
-    color: "from-green-500 to-emerald-500"
+    name: "HTML5",
+    description: "Modern markup language for creating structured web content.",
+    useCase: "Website structure, semantic markup, and accessibility.",
+    level: "Advanced",
+    color: "from-orange-500 to-red-500"
+  },
+  {
+    name: "CSS3",
+    description: "Advanced styling language with animations and responsive design.",
+    useCase: "Responsive layouts, animations, and modern UI design.",
+    level: "Advanced",
+    color: "from-blue-500 to-cyan-500"
   },
   {
     name: "JavaScript",
     description: "Dynamic programming language for interactive web applications.",
-    useCase: "Frontend development, DOM manipulation, and web APIs.",
-    level: "Learning",
+    useCase: "DOM manipulation, web APIs, and interactive features.",
+    level: "Intermediate",
     color: "from-yellow-500 to-orange-500"
-  },
-  {
-    name: "React",
-    description: "Component-based UI library for building interactive interfaces.",
-    useCase: "SPA dashboards, dynamic forms, and reusable UI systems.",
-    level: "Intermediate",
-    color: "from-blue-500 to-cyan-500"
-  },
-  {
-    name: "HTML/CSS",
-    description: "Fundamental web technologies for structure and styling.",
-    useCase: "Website layouts, responsive design, and user interfaces.",
-    level: "Intermediate",
-    color: "from-pink-500 to-rose-500"
   },
   {
     name: "PHP",
     description: "Server-side scripting language for web development.",
-    useCase: "Dynamic websites, content management, and web applications.",
-    level: "Learning",
+    useCase: "NGO website development, dynamic content, and server logic.",
+    level: "Intermediate",
     color: "from-purple-500 to-violet-500"
   },
   {
-    name: "Next.js",
-    description: "React framework with SSR, SSG, routing, and image optimization.",
-    useCase: "SEO-friendly sites, hybrid apps, and fast content platforms.",
-    level: "Learning",
-    color: "from-gray-500 to-slate-500"
+    name: "WordPress",
+    description: "Popular CMS for building and managing websites.",
+    useCase: "NGO website (atmabiswas.org), content management, and customization.",
+    level: "Intermediate",
+    color: "from-blue-600 to-indigo-600"
   },
   {
-    name: "TypeScript",
-    description: "Typed superset of JavaScript that improves reliability.",
-    useCase: "Large codebases, SDKs, and refactor-safe enterprise apps.",
+    name: "Python",
+    description: "Versatile programming language for various applications.",
+    useCase: "Web development, automation, and data processing.",
     level: "Learning",
-    color: "from-blue-600 to-blue-800"
-  },
-  {
-    name: "Node.js",
-    description: "Event-driven runtime for building scalable backends.",
-    useCase: "APIs, realtime services, CLI tools, and integrations.",
-    level: "Learning",
-    color: "from-green-600 to-green-800"
-  },
-  {
-    name: "MySQL",
-    description: "Relational database known for reliability and speed.",
-    useCase: "Transactional systems, reporting, and BI pipelines.",
-    level: "Learning",
-    color: "from-orange-500 to-amber-500"
+    color: "from-green-500 to-emerald-500"
   },
   {
     name: "Git",
@@ -74,9 +53,30 @@ const skills = [
     color: "from-red-500 to-pink-500"
   },
   {
-    name: "Web Development",
-    description: "Full-stack development of web applications and sites.",
-    useCase: "Portfolio sites, e-commerce, and interactive web platforms.",
+    name: "MySQL",
+    description: "Relational database management system.",
+    useCase: "Data storage, website backends, and information management.",
+    level: "Learning",
+    color: "from-orange-500 to-amber-500"
+  },
+  {
+    name: "React",
+    description: "Component-based UI library for building interfaces.",
+    useCase: "Interactive web applications and modern UI development.",
+    level: "Learning",
+    color: "from-cyan-500 to-blue-500"
+  },
+  {
+    name: "ICT Education",
+    description: "Teaching and training in Information and Communication Technology.",
+    useCase: "Delivering lessons to 150+ students, curriculum development.",
+    level: "Advanced",
+    color: "from-green-600 to-teal-600"
+  },
+  {
+    name: "Project Management",
+    description: "Coordinating and leading creative campaigns and events.",
+    useCase: "Club leadership, event coordination for 300+ students.",
     level: "Intermediate",
     color: "from-indigo-500 to-purple-500"
   }
@@ -84,28 +84,28 @@ const skills = [
 
 const categories = [
   {
-    title: "Frontend Development",
-    skills: ["React", "JavaScript", "HTML/CSS", "Next.js", "TypeScript"],
+    title: "Web Development",
+    skills: ["HTML5", "CSS3", "JavaScript", "PHP", "WordPress"],
     color: "from-blue-500 to-cyan-500",
     icon: "🎨"
   },
   {
-    title: "Backend Development", 
-    skills: ["Python", "PHP", "Node.js", "Express.js"],
+    title: "Programming & Tools", 
+    skills: ["Python", "React", "Git", "MySQL"],
     color: "from-green-500 to-emerald-500",
     icon: "⚙️"
   },
   {
-    title: "Database & Tools",
-    skills: ["MySQL", "Git", "Web Development", "API Integration"],
+    title: "Education & Leadership",
+    skills: ["ICT Education", "Project Management", "Team Coordination"],
     color: "from-purple-500 to-violet-500",
-    icon: "🗄️"
+    icon: "👨‍🏫"
   },
   {
-    title: "Development Tools",
-    skills: ["VS Code", "GitHub", "Netlify", "Responsive Design"],
+    title: "Professional Experience",
+    skills: ["IT Support", "Website Development", "NGO Management"],
     color: "from-orange-500 to-red-500",
-    icon: "🛠️"
+    icon: "💼"
   }
 ];
 
@@ -201,7 +201,7 @@ export default function Skills() {
                 {/* Tech tags */}
                 <div className="flex flex-wrap justify-center gap-3">
                   {['React', 'JavaScript', 'Python', 'Next.js', 'TypeScript', 'Node.js'].map((tech, index) => (
-                    <motion.div
+                <motion.div
                       key={tech}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -212,14 +212,14 @@ export default function Skills() {
                       <div className="tech-card px-4 py-2 text-sm font-mono border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group-hover:scale-105">
                         <span className="relative z-10">{tech}</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-                
+                  </div>
+                </motion.div>
+              ))}
+        </div>
+
                 {/* Right decorative line */}
                 <div className="hidden sm:block h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent w-16" />
-              </div>
+        </div>
             </motion.div>
 
             {/* Floating Elements */}
@@ -233,11 +233,11 @@ export default function Skills() {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {skills.map((skill, index) => (
-            <motion.div
+        <motion.div
               key={skill.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="tech-card group p-6 hover:scale-105 transition-transform"
             >
@@ -266,9 +266,9 @@ export default function Skills() {
                   <p className="text-xs text-muted">
                     <span className="font-medium">Use case:</span> {skill.useCase}
                   </p>
-                </div>
-              </div>
-            </motion.div>
+            </div>
+          </div>
+        </motion.div>
           ))}
         </div>
 
@@ -324,14 +324,14 @@ export default function Skills() {
                 
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <span
+                  <span
                       key={skillIndex}
                       className="tech-card px-3 py-1 text-sm font-medium hover:scale-105 transition-transform cursor-pointer"
-                    >
-                      {skill}
-                    </span>
+                  >
+                    {skill}
+                  </span>
                   ))}
-                </div>
+            </div>
               </motion.div>
             ))}
           </div>
@@ -364,14 +364,14 @@ export default function Skills() {
             <p className="text-lg text-muted max-w-2xl mx-auto">
               My current focus areas and project achievements
             </p>
-          </motion.div>
+        </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Current Focus */}
-            <motion.div
+      <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="tech-card p-8"
             >
@@ -389,10 +389,10 @@ export default function Skills() {
 
               <div className="space-y-4">
                 {[
-                  { skill: "JavaScript", level: "Learning", color: "from-yellow-500 to-orange-500", progress: 60 },
-                  { skill: "React", level: "Intermediate", color: "from-blue-500 to-cyan-500", progress: 75 },
-                  { skill: "Python", level: "Intermediate", color: "from-green-500 to-emerald-500", progress: 80 },
-                  { skill: "HTML/CSS", level: "Intermediate", color: "from-pink-500 to-rose-500", progress: 85 }
+                  { skill: "HTML5", level: "Advanced", color: "from-orange-500 to-red-500", progress: 90 },
+                  { skill: "CSS3", level: "Advanced", color: "from-blue-500 to-cyan-500", progress: 88 },
+                  { skill: "JavaScript", level: "Intermediate", color: "from-yellow-500 to-orange-500", progress: 75 },
+                  { skill: "PHP", level: "Intermediate", color: "from-purple-500 to-violet-500", progress: 80 }
                 ].map((item, index) => (
                   <motion.div
                     key={item.skill}
@@ -416,7 +416,7 @@ export default function Skills() {
                         transition={{ duration: 1, delay: 0.8 + index * 0.1 }}
                         className={`h-2 rounded-full bg-gradient-to-r ${item.color}`}
                       />
-                    </div>
+                </div>
                   </motion.div>
                 ))}
               </div>
@@ -439,34 +439,34 @@ export default function Skills() {
                 <div>
                   <h4 className="text-2xl font-bold">Notable Projects</h4>
                   <p className="text-muted">My recent achievements</p>
-                </div>
+        </div>
               </div>
 
               <div className="space-y-4">
                 {[
                   { 
-                    name: "Google Clone", 
-                    description: "HTML, CSS, JavaScript", 
+                    name: "NGO Website", 
+                    description: "atmabiswas.org - WordPress & PHP", 
                     status: "Completed",
                     color: "from-blue-500 to-indigo-500"
                   },
                   { 
-                    name: "Spotify Clone", 
-                    description: "Music streaming app", 
+                    name: "Web UI Clones", 
+                    description: "Google, Spotify, YouTube Music", 
                     status: "Completed",
                     color: "from-green-500 to-emerald-500"
                   },
                   { 
-                    name: "Tic-Tac-Toe Game", 
-                    description: "Interactive JavaScript game", 
+                    name: "ICT Education", 
+                    description: "150+ students trained", 
                     status: "Completed",
                     color: "from-purple-500 to-pink-500"
                   },
                   { 
-                    name: "Snake Game", 
-                    description: "Classic game implementation", 
+                    name: "University Projects", 
+                    description: "Cultural Club website & Discord bot", 
                     status: "Completed",
-                    color: "from-orange-500 to-red-500"
+                    color: "from-green-500 to-emerald-500"
                   }
                 ].map((project, index) => (
                   <motion.div
@@ -486,21 +486,21 @@ export default function Skills() {
                           <span className="text-xs font-medium text-green-600 dark:text-green-400">
                             {project.status}
                           </span>
-                        </div>
-                      </div>
+              </div>
+            </div>
                       <div className={`w-12 h-12 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center ml-4`}>
                         <span className="text-white font-bold text-lg">
                           {project.name.charAt(0)}
                         </span>
-                      </div>
-                    </div>
+              </div>
+            </div>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
           </div>
         </motion.div>
-      </div>
+        </div>
     </section>
   );
 }

@@ -86,34 +86,79 @@ export default function About() {
                 Hi, I&apos;m <span className="code-text">Arafat Haque Biswas</span>
               </h3>
               <p className="text-lg text-muted leading-relaxed">
-                A passionate Computer Science student at BRAC University, Bangladesh. I love creating 
-                <span className="code-text font-semibold"> digital solutions</span> that make a difference. 
-                From building web applications to developing games, I enjoy every aspect of the development process.
+                A passionate Computer Science student at BRAC University with hands-on experience in 
+                <span className="code-text font-semibold"> web development</span> and 
+                <span className="code-text font-semibold"> IT support</span>. 
+                Currently serving as IT Support Officer at ATMA BISWAS NGO, developing websites and delivering ICT education to empower communities.
               </p>
             </div>
 
-            {/* Education Card */}
-            <div className="tech-card p-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  </svg>
+            {/* Education Cards */}
+            <div className="space-y-4">
+              <div className="tech-card p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">BSc in Computer Science</h4>
+                    <p className="text-muted">BRAC University, Dhaka</p>
+                    <p className="text-sm text-muted mt-1">Currently pursuing my Bachelor&apos;s degree</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Computer Science & Engineering</h4>
-                  <p className="text-muted">BRAC University, Bangladesh</p>
-                  <p className="text-sm text-muted mt-1">Currently pursuing my Bachelor&apos;s degree</p>
+              </div>
+
+              <div className="tech-card p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Diploma in Business Administration</h4>
+                    <p className="text-muted">Alison (Online)</p>
+                    <p className="text-sm text-muted mt-1">Business Models in Strategic Management</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Work Experience */}
+            <div className="tech-card p-6">
+              <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                </svg>
+                Experience
+              </h4>
+              <div className="space-y-4">
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h5 className="font-semibold text-foreground">IT Support Officer</h5>
+                  <p className="text-sm text-muted">ATMA BISWAS NGO, Dhaka • 2022–2026</p>
+                  <p className="text-sm text-muted mt-1">Developed and maintained NGO&apos;s official website using HTML, CSS, JS, PHP</p>
+                </div>
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h5 className="font-semibold text-foreground">Secretary</h5>
+                  <p className="text-sm text-muted">BRAC University Cultural Club, Dhaka • Jan 2024–Present</p>
+                  <p className="text-sm text-muted mt-1">Led creative campaigns and coordinated club events for 300+ students</p>
+                </div>
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h5 className="font-semibold text-foreground">ICT Instructor</h5>
+                  <p className="text-sm text-muted">BRAC Education (Srijon Project), Dhaka • May–Aug 2023</p>
+                  <p className="text-sm text-muted mt-1">Delivered interactive ICT lessons to 150+ students (classes 6–9)</p>
                 </div>
               </div>
             </div>
 
             {/* Skills Preview */}
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold">Tech Stack</h4>
+              <h4 className="text-xl font-semibold">Technical Skills</h4>
               <div className="flex flex-wrap gap-3">
-                {['Python', 'JavaScript', 'React', 'HTML/CSS', 'PHP', 'Git'].map((skill, index) => (
+                {['HTML5', 'CSS3', 'JavaScript', 'PHP', 'WordPress', 'Python', 'Git', 'MySQL', 'React'].map((skill, index) => (
                   <motion.div
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -128,31 +173,49 @@ export default function About() {
               </div>
             </div>
 
+            {/* Certifications */}
+            <div className="tech-card p-6">
+              <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+                Certifications & Achievements
+              </h4>
+              <div className="space-y-3">
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h5 className="font-semibold text-foreground">Certificate of Acknowledgement</h5>
+                  <p className="text-sm text-muted">bKash Limited & The Daily Star, Newspaper Olympiad Season 4</p>
+                  <p className="text-sm text-muted">Dec 2024 – Aug 2025</p>
+                </div>
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h5 className="font-semibold text-foreground">Volunteer, Team Academics</h5>
+                  <p className="text-sm text-muted">Newspaper Olympiad Season 4</p>
+                  <p className="text-sm text-muted">Dec 2024 – Aug 2025</p>
+                </div>
+              </div>
+            </div>
+
             {/* Projects Highlight */}
             <div className="tech-card p-6">
               <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Notable Projects
+                Key Projects
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-3">
                 <div className="space-y-1">
-                  <p className="font-medium">Google Clone</p>
-                  <p className="text-sm text-muted">HTML, CSS, JavaScript</p>
+                  <p className="font-medium">NGO Website Development</p>
+                  <p className="text-sm text-muted">atmabiswas.org using WordPress and custom JavaScript</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="font-medium">Spotify Clone</p>
-                  <p className="text-sm text-muted">Music streaming app</p>
+                  <p className="font-medium">Web UI Clones</p>
+                  <p className="text-sm text-muted">Google, Spotify, and YouTube Music UI clones</p>
                 </div>
-                <div className="space-y-1">
-                  <p className="font-medium">Tic-Tac-Toe Game</p>
-                  <p className="text-sm text-muted">Interactive JavaScript game</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="font-medium">Snake Game</p>
-                  <p className="text-sm text-muted">Classic game implementation</p>
-                </div>
+                  <div className="space-y-1">
+                    <p className="font-medium">University Projects</p>
+                    <p className="text-sm text-muted">BRAC University Cultural Club website and Discord bot (Completed)</p>
+                  </div>
               </div>
             </div>
 

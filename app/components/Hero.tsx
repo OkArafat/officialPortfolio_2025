@@ -6,10 +6,10 @@ import { useEffect, useMemo, useState } from "react";
 export default function Hero() {
   const roles = useMemo(
     () => [
-      "Web Developer",
-      "React Developer", 
-      "Python Enthusiast",
-      "Problem Solver",
+      "IT Support Officer",
+      "Web Developer", 
+      "ICT Instructor",
+      "Club Secretary",
     ],
     []
   );
@@ -98,9 +98,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-lg sm:text-xl text-muted max-w-3xl mx-auto leading-relaxed"
           >
-            Computer Science student at BRAC University, passionate about building 
-            <span className="code-text font-semibold"> innovative web solutions</span> 
-            and creating digital experiences that matter.
+            Computer Science student at BRAC University with hands-on experience in 
+            <span className="code-text font-semibold"> web development</span> and 
+            <span className="code-text font-semibold"> IT support</span>. 
+            Currently serving as IT Support Officer at ATMA BISWAS NGO, developing websites and empowering communities through technology.
           </motion.p>
         </motion.div>
 
@@ -145,7 +146,7 @@ export default function Hero() {
         >
           <p className="text-sm text-muted mb-6">Tech Stack</p>
           <div className="flex flex-wrap justify-center gap-4">
-            {['React', 'JavaScript', 'Python', 'Node.js', 'HTML/CSS', 'Git'].map((tech, index) => (
+            {['HTML5', 'CSS3', 'JavaScript', 'PHP', 'WordPress', 'Python'].map((tech, index) => (
               <motion.div
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}
