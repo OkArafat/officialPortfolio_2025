@@ -24,7 +24,9 @@ export default function Home() {
           <Skills />
         </div>
 
-        <ContactInline />
+        <div className="mt-16 sm:mt-20 md:mt-28" id="contact">
+          <ContactInline />
+        </div>
       </main>
       <footer className="px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 py-8 sm:py-10 text-sm text-foreground/60">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
